@@ -22,7 +22,7 @@ from applications.user_auth import urls as user_auth_url
 
 
 schema_view = get_schema_view(
-    title='测试平台TPFlex',
+    title='Test Platform Flex',
     # renderer_classes=[OpenAPIRenderer, SwaggerUIRenderer],
     permission_classes=()
 )

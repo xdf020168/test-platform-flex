@@ -20,6 +20,10 @@ import './utils/error-log' // error log
 
 import * as filters from './filters' // global filters
 
+import Axios from 'axios'
+Vue.prototype.$axios = Axios
+Axios.defaults.headers.post['Content-Type'] = 'application/x-www-fromurlencodeed'
+
 /**
  * If you don't want to use mock-server
  * you want to use MockJs for mock api

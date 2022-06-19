@@ -11,11 +11,12 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
 import os
+from datetime import timedelta
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-print(BASE_DIR)
+# print(BASE_DIR)
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
@@ -27,7 +28,10 @@ SECRET_KEY = 'django-insecure-(3p(bpbe#5_zbh-2bcyhit+pm14(agym=4=s!)c2jygjyu3fp=
 DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
-
+CORS_ALLOW_CREDENTIALS = True
+CORS_ORIGIN_ALLOW_ALL = True
+# 允许所有的请求头
+CORS_ALLOW_HEADERS = ('*',)
 # AUTH_USER_MODEL = 'user.UserProfile'
 
 # Application definition
@@ -40,10 +44,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'django.contrib.sites',
+    # 'django.contrib.sites',
     'django_filters',
     'rest_framework',
-    'corsheaders',
+    'corsheaders',  # 解决跨越问题
 
     'applications.system_mgr.apps.SystemMgrConfig',
     'applications.user_auth.apps.UserAuthConfig',
@@ -69,25 +73,32 @@ LOGIN_URL = 'rest_framework:login'
 LOGOUT_URL = 'rest_framework:logout'
 
 REST_FRAMEWORK = {
-    #     'DEFAULT_PERMISSION_CLASSES': (
-    #         'rest_framework.permissions.IsAuthenticated',
-    #     ),
-    'DEFAULT_AUTHENTICATION_CLASSES': (
-        'rest_framework.authentication.TokenAuthentication',
-    ),
-    #     'DEFAULT_PAGINATION_CLASS': (
-    #         'rest_framework.pagination.PageNumberPagination',
-    #     ),
-    # 'EXCEPTION_HANDLER': 'common.exception_handler.exception_handler',
-    # 'DEFAULT_FILTER_BACKENDS': ('django_filters.rest_framework.DjangoFilterBackend',)
+    'DEFAULT_FILTER_BACKENDS': [
+        'django_filters.rest_framework.DjangoFilterBackend'
+    ],
+    # 'DEFAULT_AUTHENTICATION_CLASSES': [
+    #     'rest_framework_simplejwt.authentication.JWTAuthentication',
+    # ],
+
+    # 接口请求频率限制
     "DEFAULT_THROTTLE_RATES": {
         # key与定义的scope对应，value: 5表示次数 / m表示分钟  s秒  h小时  d天
         "api_update_history_add": "5/m",
     }
 }
 
+
+SIMPLE_JWT = {
+    'REFRESH_TOKEN_LIFETIME': timedelta(days=15),
+    'ROTATE_REFRESH_TOKENS': True,
+}
+
+AUTHENTICATION_BACKENDS = (
+    'applications.user_auth.views.MyCustomBackend',
+)
+
 STATICFILES_DIRS = [
-    # os.path.join(BASE_DIR, "../../tpWeb/dist/static"),
+    os.path.join(BASE_DIR, "static"),
 ]
 
 MIDDLEWARE = [

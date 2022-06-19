@@ -7,11 +7,19 @@
 @email:tao.xu2008@outlook.com
 @description:
 """
-from django.contrib.auth.models import User
+from django.contrib.auth.models import User, Group
 from rest_framework import serializers
 from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 
 from applications.user_auth.models import UserProfile
+from commons.drf_base import JsonResponse
+
+
+class GroupSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Group
+        fields = '__all__'  # ('name', 'permissions')
 
 
 class UserSerializer(serializers.ModelSerializer):
@@ -36,22 +44,21 @@ class UserProfileSerializer(serializers.ModelSerializer):
         return obj.user.username
 
 
-class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
+class MyTokenObtainPairSerializer(TokenObtainPairSerializer, UserSerializer):
     @classmethod
     def get_token(cls, user):
-        token = super().get_token(user)
+        token = super(MyTokenObtainPairSerializer, cls).get_token(user)
+
         # Add custom claims
-        # token['username'] = user.username
-        # token['code'] = 20000
-        # print(token)
-        # ... 官方示例中上面的部分没有生效
-        # print(token)
+        token['username'] = user.username
+        token['roles'] = [g.name for g in Group.objects.filter(user=user.id)]
         return token
 
     def validate(self, attrs):
         data = super().validate(attrs)
-        re_data = {'data': data, 'code': 200, 'message': 'success'}
-        return re_data
+        data['token'] = data.get('access')
+        # custom_data = {'token': data.get('access')}
+        return JsonResponse(data, msg='success!').data
 
 
 if __name__ == '__main__':

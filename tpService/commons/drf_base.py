@@ -26,7 +26,7 @@ class JsonResponse(Response):
     arbitrary media types.
     """
 
-    def __init__(self, data=None, code=2, msg='ok', success='true',
+    def __init__(self, data=None, code=20000, msg='ok', success='true',
                  status=None,
                  template_name=None, headers=None,
                  exception=False, content_type=None):

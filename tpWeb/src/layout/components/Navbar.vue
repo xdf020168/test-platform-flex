@@ -20,7 +20,7 @@
 
       <el-dropdown class="avatar-container right-menu-item hover-effect" trigger="click">
         <div class="avatar-wrapper">
-          <img :src="avatar+'?imageView2/1/w/80/h/80'" class="user-avatar">
+          <img src="@/assets/userphoto.jpg" class="user-avatar" alt="">
           <i class="el-icon-caret-bottom" />
         </div>
         <el-dropdown-menu slot="dropdown">
@@ -41,6 +41,12 @@
           </el-dropdown-item>
         </el-dropdown-menu>
       </el-dropdown>
+
+      <template>
+        <a href="https://txu2k8.github.io/test-platform-flex/" target="_blank">
+          <i class="el-icon-question" title="使用文档" />
+        </a>
+      </template>
     </div>
   </div>
 </template>
