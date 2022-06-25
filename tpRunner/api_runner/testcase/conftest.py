@@ -16,12 +16,12 @@ import pytest
 from py._xmlgen import html
 from loguru import logger
 
-from package.config import root_dir
-from package.send_message.qw_chat import ReportQWChat
-from package.base_models import TestStatusEnum, ReportSummary
-from package.config import TestSession
-from package.common.mysql_opt import MysqlOperation
-from package.common.sqlite_opt import Sqlite3Operation
+from config import root_dir
+from notification.qw_chat import ReportQWChat
+from base_models import TestStatusEnum, ReportSummary
+from config import TestSession
+from commons.mysql_opt import MysqlOperation
+from commons.sqlite_opt import Sqlite3Operation
 
 
 # 自定义参数

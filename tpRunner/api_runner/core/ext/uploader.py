@@ -12,9 +12,9 @@ import os
 from typing import Text, NoReturn
 
 from loguru import logger
-from tpRunner.config import root_dir
-from tpRunner.api_runner.core.models import TStep, FunctionsMapping
-from tpRunner.api_runner.core.parser import parse_variables_mapping
+from config import root_dir
+from api_runner.core.models import TStep, FunctionsMapping
+from api_runner.core.parser import parse_variables_mapping
 
 try:
     import filetype

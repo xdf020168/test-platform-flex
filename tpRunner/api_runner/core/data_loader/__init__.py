@@ -10,7 +10,7 @@
     2. csv/xls - 暂不支持
     3. yaml - 暂不支持
 """
-from tpRunner.api_runner.core.data_loader.case_loader import CaseLoader, load_testcase
+from api_runner.core.data_loader.case_loader import CaseLoader, load_testcase
 
 
 __all__ = ['CaseLoader', 'load_testcase']

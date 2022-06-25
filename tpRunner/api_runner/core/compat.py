@@ -12,10 +12,10 @@ from typing import List, Dict, Text, Union, Any
 
 from loguru import logger
 
-from tpRunner.utils import exceptions
-from tpRunner.api_runner.core.builtin_loader import load_project_meta, convert_relative_project_root_dir
-from tpRunner.api_runner.core.parser import parse_data
-from tpRunner.utils.util import sort_dict_by_custom_order
+from utils import exceptions
+from api_runner.core.builtin_loader import load_project_meta, convert_relative_project_root_dir
+from api_runner.core.parser import parse_data
+from utils.util import sort_dict_by_custom_order
 
 
 def convert_variables(

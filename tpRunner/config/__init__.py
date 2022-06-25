@@ -10,8 +10,8 @@
 from datetime import datetime
 from loguru import logger
 
-from tpRunner.utils.util import zfill, to_safe_name, to_class_name
-from tpRunner.config.cf_rw import *
+from utils.util import zfill, to_safe_name, to_class_name
+from config.cf_rw import *
 
 logger.info("import config module...")
 
@@ -27,14 +27,14 @@ logs_dir = os.path.join(root_dir, "logs")
 report_dir = os.path.join(root_dir, 'report')
 
 # 测试用例设计文档目录路径
-data_dir = os.path.join(root_dir, "package/api_runner/data")
+data_dir = os.path.join(root_dir, "tpRunner/api_runner/data")
 
 # testcase目录路径
-testcase_dir = os.path.join(root_dir, "package/api_runner/testcase")
+testcase_dir = os.path.join(root_dir, "tpRunner/api_runner/testcase")
 
 # globals.ini 配置项
 # 创建配置对象为全局变量
-global_cf = ConfigIni(os.path.join(root_dir, 'package/config', 'globals.ini'))
+global_cf = ConfigIni(os.path.join(root_dir, 'tpRunner/config', 'globals.ini'))
 FILE_LOG_LEVEL = global_cf.get_str("LOGGER", "file_level")
 CONSOLE_LOG_LEVEL = global_cf.get_str("LOGGER", "console_level")
 MAX_ROTATION = int(global_cf.get_str("LOGGER", "max_rotation"))
@@ -81,7 +81,8 @@ __all__ = [
     "set_os_environ", "unset_os_environ", "get_os_environment",
     # 全局常量读取
     "TIME_STR",
-    "FILE_LOG_LEVEL", "CONSOLE_LOG_LEVEL", "MAX_ROTATION"
+    "FILE_LOG_LEVEL", "CONSOLE_LOG_LEVEL", "MAX_ROTATION",
+    "TestSession"
 ]
 
 

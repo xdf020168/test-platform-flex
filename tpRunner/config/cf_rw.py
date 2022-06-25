@@ -15,7 +15,7 @@ import configparser
 import yaml
 from loguru import logger
 
-from tpRunner.utils.exceptions import EnvNotFound, VariableNotFound
+from utils.exceptions import EnvNotFound, VariableNotFound
 
 
 # 设置全局 key/value

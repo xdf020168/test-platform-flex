@@ -10,8 +10,8 @@
 import copy
 import platform
 
-from tpRunner.api_runner import __version__
-from tpRunner.api_runner.core.models import VariablesMapping
+from api_runner import __version__
+from api_runner.core.models import VariablesMapping
 
 
 def get_platform():

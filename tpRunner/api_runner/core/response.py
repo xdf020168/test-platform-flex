@@ -22,13 +22,13 @@ import jmespath
 from jmespath.exceptions import JMESPathError
 from loguru import logger
 
-from tpRunner.utils import exceptions
-from tpRunner.utils.exceptions import ValidationFailure, StatusCodeValidationFailure, \
+from utils import exceptions
+from utils.exceptions import ValidationFailure, StatusCodeValidationFailure, \
     ExtractFailure, ParamsError
-from tpRunner.base_models import TestStatusEnum
-from tpRunner.api_runner.core.models import VariablesMapping, Validators, FunctionsMapping
-from tpRunner.api_runner.core.parser import parse_data, parse_string_value, get_mapping_function
-from tpRunner.api_runner.core.builtin.comparators import get_uniform_comparator
+from base_models import TestStatusEnum
+from api_runner.core.models import VariablesMapping, Validators, FunctionsMapping
+from api_runner.core.parser import parse_data, parse_string_value, get_mapping_function
+from api_runner.core.builtin.comparators import get_uniform_comparator
 
 
 # 统一验证器

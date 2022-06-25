@@ -25,19 +25,19 @@ except ModuleNotFoundError:
 import pytest
 from loguru import logger
 
-from tpRunner.config import global_cf
-from tpRunner.utils import exceptions, util
-from tpRunner.utils.exceptions import ValidationFailure, StatusCodeValidationFailure, \
+from config import global_cf
+from utils import exceptions, util
+from utils.exceptions import ValidationFailure, StatusCodeValidationFailure, \
     ExtractFailure, ParamsError, VariableNotFound
-from tpRunner.api_runner.core.client import HttpSession
-from tpRunner.api_runner.core.ext.uploader import prepare_upload_step
-from tpRunner.api_runner.core.builtin_loader import load_project_meta
-from tpRunner.api_runner.core.parser import build_url, parse_data, parse_variables_mapping, call_func
-from tpRunner.api_runner.core.response import ResponseObject
-from tpRunner.api_runner.core.testcase import Config, Step
-from tpRunner.api_runner.core.utils import merge_variables
-from tpRunner.base_models import TestTime
-from tpRunner.api_runner.core.models import (
+from api_runner.core.client import HttpSession
+from api_runner.core.ext.uploader import prepare_upload_step
+from api_runner.core.builtin_loader import load_project_meta
+from api_runner.core.parser import build_url, parse_data, parse_variables_mapping, call_func
+from api_runner.core.response import ResponseObject
+from api_runner.core.testcase import Config, Step
+from api_runner.core.utils import merge_variables
+from base_models import TestTime
+from api_runner.core.models import (
     ProjectMeta,
     TConfig,
     TCase,
@@ -297,7 +297,7 @@ class ApiRunner(object):
             headers = parsed_request_dict.pop("headers", {})
             err_msg += f"headers: {headers}\n"
             for k, v in parsed_request_dict.items():
-                v = utils.omit_long_data(v)
+                v = util.omit_long_data(v)
                 err_msg += f"{k}: {repr(v)}\n"
 
             err_msg += "\n"
@@ -536,7 +536,7 @@ class ApiRunner(object):
             # run step
             try:
                 if USE_ALLURE:
-                    title = f"step{step.sid or step.id}: {step.step_name}"
+                    title = f"step{step.sid or step.id}({step.step_type}): {step.step_name}"
                     if step.description:
                         title += f"- {step.description}"
                     # if step.is_api_updated:

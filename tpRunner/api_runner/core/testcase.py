@@ -10,7 +10,7 @@
 import inspect
 from typing import Text, Any, Union, Callable
 
-from tpRunner.api_runner.core.models import (
+from api_runner.core.models import (
     TConfig,
     TStep,
     TRequest,

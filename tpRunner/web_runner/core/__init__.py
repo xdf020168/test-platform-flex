@@ -3,13 +3,10 @@
 """
 @author:TXU
 @file:__init__.py
-@time:2022/04/03
+@time:2022/06/25
 @email:tao.xu2008@outlook.com
 @description:
 """
-from api_runner.core.builtin.comparators import *
-from api_runner.core.builtin.functions import *
-
 
 if __name__ == '__main__':
     pass

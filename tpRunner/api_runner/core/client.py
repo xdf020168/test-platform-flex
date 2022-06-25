@@ -26,8 +26,8 @@ from requests.exceptions import (
     RequestException,
 )
 
-from tpRunner.api_runner.core.models import RequestData, ResponseData, ReqRespData, SessionData
-from tpRunner.utils import lower_dict_keys, omit_long_data
+from api_runner.core.models import RequestData, ResponseData, ReqRespData, SessionData
+from utils.util import lower_dict_keys, omit_long_data
 
 # 禁用InsecureRequestWarning
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)

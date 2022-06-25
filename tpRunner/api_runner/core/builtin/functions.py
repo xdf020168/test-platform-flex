@@ -16,7 +16,7 @@ import string
 from typing import List, Tuple, Text
 from faker import Faker
 
-from tpRunner.utils.exceptions import ParamsError
+from utils.exceptions import ParamsError
 
 
 faker = Faker(['zh_CN'])

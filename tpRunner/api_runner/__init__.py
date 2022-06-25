@@ -9,7 +9,8 @@
 """
 import os
 import sys
-from package.config import root_dir
+
+from config import root_dir
 
 import django
 
@@ -22,7 +23,7 @@ sys.path.extend(
     ]
 )
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'tpService.tpService.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'tpService.settings')
 django.setup()
 
 __version__ = "1.0.1"

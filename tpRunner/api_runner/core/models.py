@@ -22,7 +22,7 @@ from typing import List
 from pydantic import BaseModel, Field
 from pydantic import HttpUrl
 
-from tpRunner.base_models import TestStatusEnum, TestTime
+from base_models import TestStatusEnum, StepType, TestTime
 
 Name = Text
 Desc = Text
@@ -102,6 +102,7 @@ class TStep(BaseModel):
     id: int = 0
     sid: Text = ''
     step_name: Name
+    step_type: StepType = StepType.API  # 测试类型 - API
     description: Desc = ''  # 步骤描述
     is_skip: bool = False  # 是否跳过改测试步骤
     skipif: Union[Text, None] = None  # 条件表达式，是否跳过当前步骤

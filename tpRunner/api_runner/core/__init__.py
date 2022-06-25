@@ -7,9 +7,9 @@
 @email:tao.xu2008@outlook.com
 @description: 接口测试框架runner核心实现逻辑
 """
-from tpRunner.api_runner.core.parser import parse_parameters as Parameters
-from tpRunner.api_runner.core.runner import ApiRunner
-from tpRunner.api_runner.core.testcase import Config, Step, RunRequest, RunTestCase
+from api_runner.core.parser import parse_parameters as Parameters
+from api_runner.core.runner import ApiRunner
+from api_runner.core.testcase import Config, Step, RunRequest, RunTestCase
 
 __all__ = [
     "ApiRunner",

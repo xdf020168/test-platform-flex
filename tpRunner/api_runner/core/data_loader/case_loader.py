@@ -10,10 +10,10 @@
 import os
 from loguru import logger
 
-from tpRunner.utils.util import zfill
-from tpRunner.config import testcase_dir
-from tpRunner.api_runner.core.data_loader.xmind_case_loader import XmindCaseLoader
-from tpRunner.api_runner.core.data_loader.csv_case_loader import CSVCaseLoader
+from utils.util import zfill
+from config import testcase_dir
+from api_runner.core.data_loader.xmind_case_loader import XmindCaseLoader
+from api_runner.core.data_loader.csv_case_loader import CSVCaseLoader
 
 supported_f_type = (
     ".xmind",

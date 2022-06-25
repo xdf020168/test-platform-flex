@@ -13,8 +13,8 @@ import os
 from loguru import logger
 from xmindparser import xmind_to_dict
 
-from tpRunner import utils
-from tpRunner import config
+from utils import util
+import config
 
 PRIORITY_TAG_CHOICE = ["critical", "blocker", "normal"]
 
@@ -67,7 +67,7 @@ class XmindCaseLoader(object):
         canvas_data = {
             "id": idx,
             "case_name": case_name,
-            "case_safe_name": utils.to_class_name(case_name),
+            "case_safe_name": util.to_class_name(case_name),
             'description': case_desc,
             'config': {
                 "project_name": config.get_global_value("project_name"),
@@ -165,7 +165,7 @@ class XmindCaseLoader(object):
                 topic_5 = step.get('topics')[0]
                 req_data_str = topic_5.get('title')  # 接口请求输入
                 try:
-                    req_data = utils.json_loads(req_data_str)  # 期望输出
+                    req_data = util.json_loads(req_data_str)  # 期望输出
                 except Exception as e:
                     logger.error("API:{0}->{1}\nJSON Content:{2}".format(case_desc, api_name, req_data_str))
                     raise e
@@ -199,7 +199,7 @@ class XmindCaseLoader(object):
                 topic_6 = topic_5.get('topics')
                 str_validators = topic_6[0].get('title')  # 6级主题 第一项为期望输出，必填
                 try:
-                    step_dict['validators'] = utils.json_loads(str_validators)  # 期望输出
+                    step_dict['validators'] = util.json_loads(str_validators)  # 期望输出
                 except Exception as e:
                     logger.error("API:{0}->{1}\nJSON Content:{2}".format(case_desc, api_name, str_validators))
                     raise e
@@ -209,7 +209,7 @@ class XmindCaseLoader(object):
                 if len(topic_6) > 1:
                     extract = topic_6[1].get('title')
                     try:
-                        step_dict['extract'] = utils.json_loads(extract)
+                        step_dict['extract'] = util.json_loads(extract)
                     except Exception as e:
                         logger.error("API:{0}->{1}\nJSON Content:{2}".format(case_desc, api_name, extract))
                         raise e
@@ -227,4 +227,4 @@ if __name__ == '__main__':
     from tpRunner.config import root_dir
     xmind = XmindCaseLoader(os.path.join(root_dir, 'package/api_runner/data/project_1/demo.xmind'))
     case_data = xmind.get_canvas_data('case-378')
-    print(utils.json_dumps(case_data))
+    print(util.json_dumps(case_data))

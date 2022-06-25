@@ -15,10 +15,10 @@ from typing import Any, Set, Text, Callable, List, Dict
 
 from loguru import logger
 
-from tpRunner.utils import exceptions, util
-from tpRunner import config
-from tpRunner.api_runner.core import builtin_loader
-from tpRunner.api_runner.core.models import VariablesMapping, FunctionsMapping
+from utils import exceptions, util
+import config
+from api_runner.core import builtin_loader
+from api_runner.core.models import VariablesMapping, FunctionsMapping
 
 absolute_http_url_regexp = re.compile(r"^https?://", re.I)
 

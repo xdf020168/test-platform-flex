@@ -51,7 +51,7 @@ INSTALLED_APPS = [
 
     'applications.system_mgr.apps.SystemMgrConfig',
     'applications.user_auth.apps.UserAuthConfig',
-    # 'applications.api_test.apps.ApiTestConfig',
+    'applications.api_test.apps.ApiTestConfig',
 
     # 使用django-rest-auth自带登录注册api  -- 放弃
     # 'allauth',

@@ -11,7 +11,7 @@
 import unittest
 import sqlite3
 from loguru import logger as default_logger
-from package.singleton import Singleton
+from utils.singleton import Singleton
 
 
 class Sqlite3Operation(object, metaclass=Singleton):

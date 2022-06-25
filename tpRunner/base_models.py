@@ -15,9 +15,22 @@ from pydantic import BaseModel
 
 # 测试平台信息
 class PlatformInfo(BaseModel):
+    runner_name: Text
     runner_version: Text
     python_version: Text
     platform: Text
+
+
+# 测试步骤类型
+class StepType(Text, Enum):
+    """测试步骤类型枚举"""
+    UNKNOWN = ''  # 未知、未定义
+    API = 'API'  # rest_api 测试
+    WEB = 'WEB'  # Web UI 测试
+    SDK = 'SDK'  # SDK 调用
+    CMD = 'CMD'  # OS CMD 命令执行
+    UC = 'UC'  # UC 命令执行
+    CASE_REF = 'CASE_REF'  # 步骤为测试用例引用
 
 
 # 测试结果 - 状态枚举

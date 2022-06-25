@@ -23,17 +23,17 @@ from loguru import logger
 # from yapf.yapflib.yapf_api import FormatCode
 import py_compile
 
-from tpRunner.utils import exceptions
-from tpRunner.utils.util import is_support_multiprocessing
-from tpRunner.api_runner import __version__
-from tpRunner.api_runner.core.compat import (
+from utils import exceptions
+from utils.util import is_support_multiprocessing
+from api_runner import __version__
+from api_runner.core.compat import (
     ensure_testcase_v3_api,
     ensure_testcase_v3,
     convert_variables,
     compat_path_sep,
 )
 
-from tpRunner.api_runner.core.builtin_loader import (
+from api_runner.core.builtin_loader import (
     # load_folder_files,
     # load_test_file,
     load_testcase,
@@ -41,8 +41,8 @@ from tpRunner.api_runner.core.builtin_loader import (
     load_project_meta,
     convert_relative_project_root_dir,
 )
-from tpRunner.api_runner.core.response import uniform_validator
-from tpRunner.api_runner.core.utils import merge_variables
+from api_runner.core.response import uniform_validator
+from api_runner.core.utils import merge_variables
 
 # pytest测试文件，缓存字典，保存该字典避免重复生成
 pytest_files_made_cache_mapping: Dict[Text, List[Text]] = {}
@@ -66,8 +66,8 @@ __RUNNER_TEMPLATE__ = jinja2.Template(
 
 import allure
 import pytest
-from tpRunner.api_runner.core.parser import parse_parameters as Parameters
-from tpRunner.api_runner.core import ApiRunner, Config, Step, RunRequest, RunTestCase
+from api_runner.core.parser import parse_parameters as Parameters
+from api_runner.core import ApiRunner, Config, Step, RunRequest, RunTestCase
 
 {% if imports_list and diff_levels > 0 %}
 import sys
