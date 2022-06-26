@@ -38,7 +38,7 @@ const apiTestRouter = {
     },
     {
       path: 'testReport',
-      component: () => import('@/views/components-demo/markdown'),
+      component: () => import('@/views/api-test/report-mgr'),
       name: '历史报告',
       meta: { title: '历史报告' }
     },

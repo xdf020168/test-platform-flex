@@ -20,7 +20,7 @@ export function getInfo(token) {
 
 export function logout() {
   return request({
-    url: '/vue-element-admin/user/logout',
+    url: '/api/user_auth/jwt/user/logout',
     method: 'post'
   })
 }

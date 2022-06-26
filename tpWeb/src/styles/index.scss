@@ -4,6 +4,10 @@
 @import './element-ui.scss';
 @import './sidebar.scss';
 @import './btn.scss';
+//以下为自定义 --by txu
+@import './basic.scss';
+@import './tree.css';
+@import './build_status.css';
 
 body {
   height: 100%;

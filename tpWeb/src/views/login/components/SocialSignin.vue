@@ -1,12 +1,12 @@
 <template>
-  <div class="social-signup-container">
+  <div class="social-signup-container" style="text-align:right">
     <div class="sign-btn" @click="wechatHandleClick('wechat')">
       <span class="wx-svg-container"><svg-icon icon-class="wechat" class="icon" /></span>
-      WeChat
+      <!--      WeChat-->
     </div>
     <div class="sign-btn" @click="tencentHandleClick('tencent')">
       <span class="qq-svg-container"><svg-icon icon-class="qq" class="icon" /></span>
-      QQ
+      <!--      QQ-->
     </div>
   </div>
 </template>
@@ -58,7 +58,7 @@ export default {
       text-align: center;
       padding-top: 1px;
       border-radius: 4px;
-      margin-bottom: 20px;
+      //margin-bottom: 20px;
       margin-right: 5px;
     }
     .wx-svg-container {

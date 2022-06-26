@@ -1,17 +1,20 @@
+// const fa = require("element-ui/src/locale/lang/fa");
 module.exports = {
-  title: 'Vue Element Admin',
+  title: 'TestPlatformFlex',
 
   /**
    * @type {boolean} true | false
    * @description Whether show the settings right-panel
+   * 页面设置侧边显示
    */
-  showSettings: true,
+  showSettings: false,
 
   /**
    * @type {boolean} true | false
    * @description Whether need tagsView
+   * 页面标签
    */
-  tagsView: true,
+  tagsView: false,
 
   /**
    * @type {boolean} true | false

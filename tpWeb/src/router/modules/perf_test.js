@@ -15,36 +15,14 @@ const performanceTestRouter = {
     {
       path: 'dataMgr',
       component: () => import('@/views/components-demo/markdown'),
-      name: '数据管理',
-      meta: { title: '数据管理' }
+      name: '数据管理2',
+      meta: { title: '数据管理2' }
     },
     {
-      path: 'testReport',
+      path: 'testPerfReport',
       component: () => import('@/views/components-demo/markdown'),
-      name: '历史报告',
+      name: '性能报告',
       meta: { title: '历史报告' }
-    },
-    {
-      path: 'statisticalAnalysis',
-      component: () => import('@/views/components-demo/markdown'),
-      name: 'api_testcase_management',
-      meta: { title: '统计分析' },
-      redirect: '/api_test/statisticalAnalysis/summary',
-      children: [
-        {
-          path: 'summary',
-          component: () => import('@/views/nested/menu1/menu1-1'),
-          name: '概览',
-          meta: { title: '概览' }
-        },
-        {
-          path: 'work',
-          component: () => import('@/views/nested/menu1/menu1-2'),
-          name: '进度分析',
-          redirect: '/nested/menu1/menu1-2/menu1-2-1',
-          meta: { title: '进度分析' }
-        }
-      ]
     }
   ]
 }

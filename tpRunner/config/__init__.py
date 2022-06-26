@@ -76,6 +76,7 @@ __all__ = [
     # 路径
     "root_dir", "logs_dir", "report_dir", "data_dir", "testcase_dir",
     # 全局内存变量读写
+    "global_cf",
     "set_global_value", "get_global_value", "get_global_dict",
     # 环境变量读写
     "set_os_environ", "unset_os_environ", "get_os_environment",
