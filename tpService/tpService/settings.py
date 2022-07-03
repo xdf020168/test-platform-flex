@@ -16,7 +16,7 @@ from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-# print(BASE_DIR)
+print(BASE_DIR)
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
@@ -51,7 +51,8 @@ INSTALLED_APPS = [
 
     'applications.system_mgr.apps.SystemMgrConfig',
     'applications.user_auth.apps.UserAuthConfig',
-    'applications.api_test.apps.ApiTestConfig',
+    'applications.base_app.apps.BaseAppConfig',
+    # 'applications.api_test.apps.ApiTestConfig',
 
     # 使用django-rest-auth自带登录注册api  -- 放弃
     # 'allauth',

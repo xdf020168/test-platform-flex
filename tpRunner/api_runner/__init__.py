@@ -11,6 +11,14 @@ import os
 import sys
 import django
 
+from config import root_dir
+
+sys.path.extend(
+    [
+        # root_dir,
+        os.path.join(root_dir, 'tpService')
+    ]
+)
 
 print('Python %s on %s' % (sys.version, sys.platform))
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'tpService.settings')

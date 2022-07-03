@@ -20,8 +20,8 @@ from config import root_dir
 from notification.qw_chat import ReportQWChat
 from base_models import TestStatusEnum, ReportSummary
 from config import TestSession
-from commons.mysql_opt import MysqlOperation
-from commons.sqlite_opt import Sqlite3Operation
+from sdk.mysql_opt import MysqlOperation
+from sdk.sqlite_opt import Sqlite3Operation
 
 
 # 自定义参数

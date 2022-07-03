@@ -19,6 +19,7 @@ from rest_framework.schemas import get_schema_view
 
 # from applications.system_mgr import urls as system_mgr_url
 from applications.user_auth import urls as user_auth_url
+from applications.base_app import urls as base_app_url
 from applications.api_test import urls as api_test_urls
 
 
@@ -39,6 +40,7 @@ urlpatterns = [
     path('api/user_auth/', include(user_auth_url)),
 
     # apps
+    path('api/base_app/', include(base_app_url)),
     path('api/api_test/', include(api_test_urls)),
     path(r'docs/', schema_view, name="docs"),
 ]

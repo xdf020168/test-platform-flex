@@ -17,7 +17,7 @@ from loguru import logger
 import config
 from utils import util
 from api_runner.run_api import api_runner_exec
-from applications.api_test.models import TestReport
+from applications.base_app.models import TestReport
 
 
 def pytest_parser():

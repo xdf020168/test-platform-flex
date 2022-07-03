@@ -7,11 +7,11 @@
 @email:tao.xu2008@outlook.com
 @description:
 """
-from django.urls import path, include, re_path
+from django.urls import path, include
 # from rest_framework.routers import DefaultRouter
 from rest_framework_bulk.routes import BulkRouter
 
-from applications.api_test.view_set.test_view.test_report import TestReportViewSet, PytestHtmlViewSet, \
+from applications.base_app.view_set.test_view.test_report import TestReportViewSet, PytestHtmlViewSet, \
     JenkinsAllureViewSet, TestLogsViewSet
 
 # router = DefaultRouter()
