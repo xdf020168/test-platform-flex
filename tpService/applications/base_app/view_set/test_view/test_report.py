@@ -11,7 +11,7 @@ from rest_framework.mixins import ListModelMixin, RetrieveModelMixin
 from rest_framework.viewsets import GenericViewSet
 
 from config import global_cf
-from sdk.jenkins_opt import JenkinsOperation
+from libs.jenkins_opt import JenkinsOperation
 
 from commons.drf_base import JsonResponse, BaseViewSet
 from applications.base_app.models import TestReport

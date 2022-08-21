@@ -12,6 +12,7 @@ from loguru import logger
 
 from utils.util import zfill, to_safe_name, to_class_name
 from config.cf_rw import *
+from config.xml_parse import *
 
 logger.info("import config module...")
 
@@ -38,17 +39,34 @@ global_cf = ConfigIni(os.path.join(root_dir, 'tpRunner/config', 'globals.ini'))
 FILE_LOG_LEVEL = global_cf.get_str("LOGGER", "file_level")
 CONSOLE_LOG_LEVEL = global_cf.get_str("LOGGER", "console_level")
 MAX_ROTATION = int(global_cf.get_str("LOGGER", "max_rotation"))
+DB_INFO = {
+    "ENGINE": global_cf.get_str("DATABASES", "ENGINE"),
+    "NAME": global_cf.get_str("DATABASES", "NAME"),
+}
 
 
 class TestSession(object):
     """生成基于report.id的测试session"""
-    def __init__(self, project_name, env_name, report_id):
+    def __init__(self, project_name, test_conf_path, report_id):
         self.project_name = to_class_name(project_name)
-        self.env_name = to_safe_name(env_name)
+        self.test_conf_path = test_conf_path
+        self.test_conf_base_path = ''
+        self.test_conf = self.test_conf_parse()
         self.report_id = report_id
         self.zfill_report_id = zfill(report_id)
         self.log_level = FILE_LOG_LEVEL
         self.max_rotation = MAX_ROTATION
+
+    def test_conf_parse(self):
+        """
+        测试配置 xml解析
+        :return:
+        """
+        logger.info("参数解析...")
+        xtc = XmlTestConfParse(self.test_conf_path)
+        self.test_conf_base_path = xtc.base_path
+        test_conf = xtc.parse_test_conf()
+        return test_conf
 
     @property
     def testcase_path(self):
@@ -59,7 +77,7 @@ class TestSession(object):
         return os.path.join(
             logs_dir,
             self.project_name,
-            '{}-{}-{}-message.log'.format(self.zfill_report_id, self.env_name, TIME_STR)
+            '{}-{}-message.log'.format(self.zfill_report_id, TIME_STR)
         )
 
     @property
@@ -72,11 +90,11 @@ class TestSession(object):
 
 
 __all__ = [
-    "read_yaml", "ConfigIni",
+    "read_yaml", "ConfigIni", "XmlTestConfParse",
     # 路径
     "root_dir", "logs_dir", "report_dir", "data_dir", "testcase_dir",
     # 全局内存变量读写
-    "global_cf",
+    "global_cf", "DB_INFO",
     "set_global_value", "get_global_value", "get_global_dict",
     # 环境变量读写
     "set_os_environ", "unset_os_environ", "get_os_environment",

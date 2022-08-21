@@ -11,7 +11,7 @@
 from rest_framework.mixins import ListModelMixin
 from rest_framework.viewsets import GenericViewSet
 
-from api_runner.internal.builtin.comparators import comparators_define
+from core.operator.api.builtin.comparators import comparators_define
 from commons.drf_base import JsonResponse
 
 

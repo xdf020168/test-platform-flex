@@ -13,7 +13,7 @@ import tableRouter from './modules/table'
 import nestedRouter from './modules/nested'
 import testManagementRouter from '@/router/modules/test_management'
 import apiTestRouter from '@/router/modules/api_test'
-import webTestRouter from '@/router/modules/web_test'
+import featureTestRouter from '@/router/modules/feature_test'
 import performanceTestRouter from '@/router/modules/perf_test'
 import testToolsRouter from '@/router/modules/test_tools'
 import dataFactoryRouter from '@/router/modules/data_factory'
@@ -145,7 +145,7 @@ export const asyncRoutes = [
   /** when your routing map is too long, you can split it into small modules **/
   testManagementRouter, // 测试管理
   apiTestRouter, // 接口测试
-  webTestRouter, // Web测试
+  featureTestRouter, // Web测试
   performanceTestRouter, // 性能测试
   testToolsRouter, // 测试工具
   dataFactoryRouter, // 数据工厂

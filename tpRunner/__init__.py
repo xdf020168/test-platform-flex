@@ -9,12 +9,14 @@
 """
 import os
 import sys
-from config import root_dir
 
+root_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "../"))
 sys.path.extend(
     [
-        # root_dir,
-        os.path.join(root_dir, 'tpService')
+        root_dir,
+        os.path.join(root_dir, 'tpRunner'),
+        os.path.join(root_dir, 'tpService'),
+        os.path.join(root_dir, 'tpService/tpService')
     ]
 )
 

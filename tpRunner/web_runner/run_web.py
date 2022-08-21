@@ -10,17 +10,14 @@
 import os
 import json
 import argparse
-import atexit
 
 from loguru import logger
-import subprocess
 
 from utils import util
 import config
-from base_models import DBInfo
 from utils.util import rm_tree, seconds_to_hms
 from api_runner.internal.maker import main_make
-from api_runner.internal.data_loader import load_testcase
+from core.operator.api.data_loader import load_testcase
 
 from django.conf import settings
 from applications.api_test.models import TestReport
