@@ -7,7 +7,7 @@
 @email:tao.xu2008@outlook.com
 @description:
 """
-from tpRunner.core.operator import ApiStep, RunRequest
+from core.operator import ApiStep, RunRequest
 
 
 def login(user="admin", password="Pass@0301"):

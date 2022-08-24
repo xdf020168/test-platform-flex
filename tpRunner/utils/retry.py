@@ -14,7 +14,7 @@ import functools
 from functools import partial
 
 from loguru import logger
-from tpRunner.utils.util import print_progressbar
+from utils.util import print_progressbar
 
 try:
     from decorator import decorator

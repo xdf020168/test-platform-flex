@@ -10,7 +10,7 @@
 import requests
 from loguru import logger
 
-from tpRunner.base_models import ReportSummary
+from base.models import ReportSummary
 
 # 企微群机器人key
 QW_TEST_KEY = 'c6ca03de-d689-4ab8-bd3b-421682501a77'  # 测试群

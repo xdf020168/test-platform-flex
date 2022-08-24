@@ -25,7 +25,7 @@ from loguru import logger
 from utils import exceptions
 from utils.exceptions import ValidationFailure, StatusCodeValidationFailure, \
     ExtractFailure, ParamsError
-from base_models import TestStatusEnum
+from base.models import TestStatusEnum
 from core.operator.api.models import VariablesMapping, Validators, FunctionsMapping
 from core.operator.api.parser import parse_data, parse_string_value, get_mapping_function
 from core.operator.api.builtin.comparators import get_uniform_comparator

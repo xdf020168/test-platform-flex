@@ -36,7 +36,7 @@ from core.operator.api.parser import build_url, parse_data, parse_variables_mapp
 from core.operator.api.response import ResponseObject
 from core.operator.api.step import Config, ApiStep as Step
 from core.operator.api.utils import merge_variables
-from base_models import TestTime
+from base.models import TestTime
 from core.operator.api.models import (
     ProjectMeta,
     TConfig,

@@ -18,7 +18,7 @@ from loguru import logger
 
 from config import root_dir
 from notification.qw_chat import ReportQWChat
-from base_models import TestStatusEnum, ReportSummary
+from base.models import TestStatusEnum, ReportSummary
 from config import TestSession
 from libs.mysql_opt import MysqlOperation
 from libs.sqlite_opt import Sqlite3Operation

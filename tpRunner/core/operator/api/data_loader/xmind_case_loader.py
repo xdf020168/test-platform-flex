@@ -224,7 +224,7 @@ class XmindCaseLoader(object):
 
 
 if __name__ == '__main__':
-    from tpRunner.config import root_dir
+    from config import root_dir
     xmind = XmindCaseLoader(os.path.join(root_dir, 'tpRunner/data/project_1/demo.xmind'))
     case_data = xmind.get_canvas_data('case-378')
     print(util.json_dumps(case_data))

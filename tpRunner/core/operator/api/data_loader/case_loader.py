@@ -119,6 +119,6 @@ def load_testcase(root_data_dir: str, data_sub_dirs: list):
 
 
 if __name__ == '__main__':
-    from tpRunner.config import root_dir
+    from config import root_dir
     data_list = load_testcase(os.path.join(root_dir, 'tpRunner/data/'), ['project_1'])
     print(data_list)

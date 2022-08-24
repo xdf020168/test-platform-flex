@@ -22,7 +22,7 @@ from typing import List
 from pydantic import BaseModel, Field
 from pydantic import HttpUrl
 
-from base_models import TestStatusEnum, StepType, TestTime
+from base.models import TestStatusEnum, StepType, TestTime
 
 Name = Text
 Desc = Text

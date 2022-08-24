@@ -8,7 +8,7 @@
 @description:首页类
 """
 from selenium.webdriver.common.by import By
-from tpRunner.web_runner.internal.base_page import BasePage
+from web_runner.internal.base_page import BasePage
 
 
 class HomePage(BasePage):
